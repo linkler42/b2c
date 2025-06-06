@@ -55,8 +55,7 @@ const categories = [
         v-for="(category, index) in categories"
         :key="index"
         to="#"
-        class="hover:underline whitespace-nowrap"
-      >
+        class="hover:underline whitespace-nowrap">
         {{ category }}
       </NuxtLink>
     </nav>
@@ -66,7 +65,7 @@ const categories = [
     <slot />
   </div>
 
-  <footer class="px-4 lg:px-8">
+  <footer class="px-4 lg:px-8 mb-10">
     <div class="flex flex-col md:flex-row bg-[#0E6CDD0D] mx-auto w-full max-w-[1920px] h-auto md:h-[110px] rounded-md p-4 md:p-6 gap-4 md:gap-0">
       <div class="flex flex-col justify-center">
         <p class="font-circe font-normal text-[20px] leading-[18px] m-0 mb-2">Подпишитесь на нашу рассылку</p>

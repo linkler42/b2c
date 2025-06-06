@@ -1,5 +1,10 @@
 <template>
-    <div class="flex flex-row gap-7">
+  <div v-if="loading">
+    <div class="bg-blue-50 w-[264px] h-[496px] rounded-[6px] animate-pulse"></div>
+  </div>
+
+<div v-else>
+  <div class="flex flex-row gap-7">
   <div class="w-[264px] h-[496px] rounded-[6px] border border-[rgba(14,108,221,0.2)] overflow-hidden relative p-4 flex flex-col justify-between">
 
   <div class="absolute top-4 left-4 space-y-1 z-10">
@@ -13,7 +18,7 @@
 
   <!-- Контент карточки -->
   <div class="flex flex-col items-center text-left flex-1 mt-10">
-    <img src="/public/iphone.svg" class="mx-auto mb-4" />
+    <img src="/public/iphone.svg" class="mx-auto mb-4"/>
 
     <div class="flex items-center gap-2 mb-2 self-start">
       <img src="/star.svg" class="w-4 h-4" />
@@ -48,13 +53,15 @@
       <img src="/icon.svg" alt="icon" class="w-6 h-6" />
     </div>
   </div>
-
-
-
   </div>
   </div>
-
-  
-  
+</div>
 </div>
 </template>
+
+<script setup>
+  const loading = ref(true)
+  onMounted(() => {
+  loading.value = false
+})
+</script>
